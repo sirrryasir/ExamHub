@@ -76,11 +76,11 @@ function Contact() {
             <div>
               <h3 className="text-xl font-semibold text-blue-600">Email</h3>
               <a
-                href="mailto:its.yazzzy@gmail.com"
+                href="mailto:sir@yaasir.dev"
                 target="_blank"
                 className="text-gray-700 dark:text-white"
               >
-                its.yazzzy@gmail.com
+                sir@yaasir.dev
               </a>
             </div>
             <div>
