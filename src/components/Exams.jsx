@@ -70,7 +70,7 @@ const Exams = () => {
                 name="subject"
                 onChange={handleFilterChange}
                 value={filters.subject}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 font-inter text-gray-700"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 font-inter text-gray-700 dark:text-gray-300"
               >
                 <option value="All">All Subjects</option>
                 <option value="Mathematics">Mathematics</option>
@@ -94,7 +94,7 @@ const Exams = () => {
                 name="year"
                 onChange={handleFilterChange}
                 value={filters.year}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 font-inter text-gray-700"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 font-inter text-gray-700 dark:text-gray-300"
               >
                 <option value="All">All Years</option>
                 <option value="2025">2025</option>

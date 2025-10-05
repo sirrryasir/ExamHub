@@ -66,7 +66,7 @@ const Navbar = () => {
         {/* Menu button (mobile) */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="sm:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="sm:hidden text-2xl p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
         >
           {isMenuOpen ? "✕" : "☰"}
         </button>
