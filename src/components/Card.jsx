@@ -14,31 +14,35 @@ const Card = ({ title, subject, year, pdfLink, answerLink }) => {
 
       <div className="mt-auto flex space-x-3 pt-3 border-t border-gray-100">
         {/* PDF Button */}
-        <a
-          href={pdfLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex justify-center items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition duration-150 text-sm shadow-md"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+        {pdfLink && (
+          <a
+            href={`${pdfLink}?dl=1`}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex justify-center items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition duration-150 text-sm shadow-md"
           >
-            <path
-              fillRule="evenodd"
-              d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <span>PDF</span>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span>PDF</span>
+          </a>
+        )}
 
         {/* Answer Button (only if available) */}
         {answerLink && (
           <a
-            href={answerLink}
+            href={`${answerLink}?dl=1`}
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex justify-center items-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-2 px-3 rounded-lg transition duration-150 text-sm shadow-md"

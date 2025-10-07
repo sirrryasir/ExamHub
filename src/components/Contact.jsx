@@ -23,7 +23,7 @@ function Contact() {
         },
         (error) => {
           alert("Failed to send message ❌");
-          console.log(error.text);
+          console.error(error.text);
         }
       );
   };
@@ -84,9 +84,9 @@ function Contact() {
               </a>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-blue-600">Phone</h3>
+              <h3 className="text-xl font-semibold text-blue-600">WhatsApp</h3>
               <a
-                href="https://wa.me/+252676919012"
+                href="https://wa.me/+252636919012"
                 target="_blank"
                 className="text-gray-700 dark:text-white"
               >

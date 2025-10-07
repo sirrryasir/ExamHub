@@ -11,24 +11,20 @@ const Exams = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [exams, setExams] = useState([]);
 
-  // ✅ Load data
   useEffect(() => {
     setExams(examsData);
   }, []);
 
-  // ✅ Detect query from URL (example: /exams?query=Math)
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const query = params.get("query") || "";
     setSearchQuery(query.toLowerCase());
   }, [location.search]);
 
-  // ✅ Handle dropdown filters
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
-  // ✅ Filter logic
   const filteredExams = exams.filter((exam) => {
     const subjectMatch =
       filters.subject === "All" || exam.subject === filters.subject;
