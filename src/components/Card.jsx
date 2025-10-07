@@ -15,11 +15,20 @@ const Card = ({ title, subject, year, pdfLink, answerLink }) => {
       <div className="mt-auto flex space-x-3 pt-3 border-t border-gray-100">
         {/* PDF Button */}
         {pdfLink && (
-          <a
-            href={`${pdfLink}?dl=1`}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = pdfLink;
+
+              // Samee magaca fileka
+              const safeTitle = title.replace(/\s+/g, "_"); // boosaska → "_"
+              const fileName = `${safeTitle}_${year}.pdf`; // tusaale: Maths_Paper_II_2023.pdf
+
+              link.download = fileName;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
             className="flex-1 flex justify-center items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg transition duration-150 text-sm shadow-md"
           >
             <svg
@@ -35,16 +44,24 @@ const Card = ({ title, subject, year, pdfLink, answerLink }) => {
               />
             </svg>
             <span>PDF</span>
-          </a>
+          </button>
         )}
 
-        {/* Answer Button (only if available) */}
         {answerLink && (
-          <a
-            href={`${answerLink}?dl=1`}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = answerLink;
+
+              // Magac fileka Answer-ka
+              const safeTitle = title.replace(/\s+/g, "_");
+              const fileName = `${safeTitle}_${year}_Answers.pdf`;
+
+              link.download = fileName;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
             className="flex-1 flex justify-center items-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-2 px-3 rounded-lg transition duration-150 text-sm shadow-md"
           >
             <svg
@@ -60,7 +77,7 @@ const Card = ({ title, subject, year, pdfLink, answerLink }) => {
               />
             </svg>
             <span>Answer</span>
-          </a>
+          </button>
         )}
       </div>
     </div>

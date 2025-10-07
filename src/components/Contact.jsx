@@ -17,7 +17,7 @@ function Contact() {
         "lbASzE-CiXyu8aQhd"
       )
       .then(
-        (result) => {
+        () => {
           alert("Message sent successfully ✅");
           e.target.reset();
         },
@@ -90,7 +90,7 @@ function Contact() {
                 target="_blank"
                 className="text-gray-700 dark:text-white"
               >
-                +252 67 6919012
+                +252 63 6919012
               </a>
             </div>
             <div>
